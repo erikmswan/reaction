@@ -19,4 +19,8 @@ __current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 __root_name=$(basename "${__root_dir}")
 
+# clone in our custom plugin
+__custom_plugin_dir="${__root_dir}/imports/plugins/custom"
+git clone git@github.com:erikmswan/fifo-payment-plugin.git ${__custom_plugin_dir}/fifo-payments-plugin
+
 echo "${__root_name} post-build script invoked." 2>&1
